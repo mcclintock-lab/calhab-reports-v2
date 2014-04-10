@@ -6,61 +6,29 @@
 </div>
 {{/sketchClass.deleted}}
 <div class="reportSection tableContainer">
-  <h4>Urchin Patch Data for Original MPAs</h4>
+  <h4>Urchin Patch Data<a href="#" data-toggle-node="53457ecf55b5a4645cb28c3a" data-visible="false">show habitat</a></h4>
     <p class="large">
       The table shows the square meters of suitable urchin habitat within a 5 km radius of 135 urchin patches. Suitable habitat consists of hard substrate in water depths
-      of 0 - 100 m (Rassweiller 2012). The third column indicates the presence (1) or absence (0) of a Marine Protected Area (MPA) within 5 km of the patch.
+      of 0 - 100 m <a href="http://www.pnas.org/content/109/29/11884.full" target="_blank">(Rassweiller 2012)</a>. The third column indicates the presence (1) or absence (0) of a Marine Protected Area (MPA) within 5 km of the patch. The fourth column data shows the result of modifying MPAs within SeaSketch. With an original, unmodified MPA set, the values in the fourth column will be identical to that shown in the third column.
     <p>
     <table>
       <thead>
         <tr>
-          <th style="width:180px;">Patch Number</th>
+          <th style="width:100px">Patch Number</th>
           <th>Hard Substrate Area (square meters)</th>
-          <th>Overlaps With Existing MPA</th>
+          <th>Overlaps With Existing MPA?</th>
+          <th>Overlaps with New and Existing MPAs?<th>
         </tr>
       </thead>
       <tbody>
         {{#urchinAreas}}
           <tr>
-            <td>{{URCH_ID}}</td>
+            <td style="text-align:center;">{{URCH_ID}}</td>
             <td>{{SIZE}}</td>
             <td>{{ORIG_MPA}}</td>
+            <td>{{NEW_MPA}}
           </tr>
         {{/urchinAreas}}
       </tbody>
     </table>
 </div>
-
-<div class="reportSection tableContainer">
-  <h4>Urchin Patch Data for New MPAs</h4>
-    <p>
-      The table shows the square meters of suitable urchin habitat within a 5 km radius of 135 urchin patches. Suitable habitat consists of hard substrate in water depths
-      of 0 - 100 m (Rassweiller 2012). The third column indicates the presence (1) or absence (0) of a Marine Protected Area (MPA) within 5 km of the patch.
-      NOTE: this data shows the result of modifying MPAs within SeaSketch. With an original, unmodified MPA set, the data will be identical to that shown in the first table.
-    </p>
-    <table>
-      <thead>
-        <tr>
-          <th style="width:180px;">Patch Number</th>
-          <th>Hard Substrate Area (square meters)</th>
-          <th>Overlaps with New MPA</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#urchinAreas}}
-          <tr>
-            <td>{{URCH_ID}}</td>
-            <td>{{SIZE}}</td>
-            <td>{{NEW_MPA}}</td>
-          </tr>
-        {{/urchinAreas}}
-      </tbody>
-    </table>
-</div>
-<!--
-    <p class="large">
-      The table shows the square meters of suitable urchin habitat within a 5 km radius of 135 urchin patches. Suitable habitat consists of hard substrate in water depths
-      of 0 - 100 m <a href="http://www.pnas.org/content/109/29/11884.full" target="_blank">(Rassweiller 2012)</a>. The third column indicates the presence (1) or absence (0) of a Marine Protected Area (MPA) within 5 km of the patch.
-    <p>
-
--->

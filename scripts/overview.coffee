@@ -1,5 +1,9 @@
 ReportTab = require 'reportTab'
 templates = require '../templates/templates.js'
+_partials = require '../node_modules/seasketch-reporting-api/templates/templates.js'
+partials = []
+for key, val of _partials
+  partials[key.replace('node_modules/seasketch-reporting-api/', '')] = val
 
 class OverviewTab extends ReportTab
   name: 'Overview'
@@ -9,6 +13,7 @@ class OverviewTab extends ReportTab
     'UrchinAreas'
   ]
   
+
   render: () ->
     # create random data for visualization
     urchinAreas = @recordSet('UrchinAreas', 'UrchinAreas').toArray()
@@ -21,7 +26,8 @@ class OverviewTab extends ReportTab
       admin: @project.isAdmin window.user
       urchinAreas: urchinAreas
     
-    @$el.html @template.render(context, templates)
 
-
+    @$el.html @template.render(context, partials)
+    @enableLayerTogglers()
+    
 module.exports = OverviewTab
